@@ -124,7 +124,8 @@ impl<T: CacheManager> RustemonClientBuilder<T> {
 /// Custom client used to call Pokeapi.
 #[derive(Debug)]
 pub struct RustemonClient {
-    client: ClientWithMiddleware,
+    /// [reqwest] client with [HttpCache].
+    pub client: ClientWithMiddleware,
     base: Url,
 }
 
